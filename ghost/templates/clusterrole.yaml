@@ -1,0 +1,16 @@
+{{- if .Values.rbac.create -}}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ include "ghost.name" . }}
+  labels:
+    {{- include "ghost.labels" . | nindent 4 }}
+rules:
+- apiGroups: ["apps"]
+  resources:
+  - deployments
+  verbs:
+  - get
+  - watch
+  - list
+{{- end }}
