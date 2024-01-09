@@ -1,8 +1,8 @@
 [Ghost](https://ghost.org) is used by creators for running their own website to publish private content
 
 ## Flow Diagram
+![design](images/design.png)
 
-![[ghost-architecture.png]]
 ## Quickstart Install
 
 These instructions are for ghost installation on bare metal kubernetes cluster using `helm`.
