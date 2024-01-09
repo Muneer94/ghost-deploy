@@ -1,0 +1,24 @@
+apiVersion: v2
+type: application
+annotations:
+  category: Infrastructure
+  app: ghost
+  licenses: Apache-2.0
+name: ghost
+description: Helm Chart Deployment of Ghost with mysql DB replication
+version: "0.1.0"
+appVersion: "0.2.0"
+keywords:
+  - ghost
+home: https://github.com/Muneer94/ghost-deploy
+sources:
+  - https://github.com/Muneer94/ghost-deploy
+maintainers:
+  - name: Muneer Syed
+    email: github@muneer.dev
+dependencies:
+  - name: mysql
+    version: "~9.x.x-0"
+    repository: "file://../mysql/"
+    tags:
+      - mysql
