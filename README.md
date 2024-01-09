@@ -7,9 +7,9 @@
 
 These instructions are for ghost installation on bare metal kubernetes cluster using `helm`.
 
-1. Run build dependency command to create bitnami mysql helm chart in ghost helm charts directory
+1. Run update dependency command to create bitnami mysql helm chart in ghost helm charts directory
 ```bash
-helm dependency build ./ghost --debug
+helm dependency update ./ghost --debug
 ```
 2. Deploy [local-path-provisioner](https://github.com/rancher/local-path-provisioner) storage class but it does not support `readwritemany` so for high availability of your kubernetes cluster better to use `longhorn`
 ```bash
