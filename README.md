@@ -41,4 +41,4 @@ helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx --namespace ing
 kubectl apply -f custom/ghost/ingress.yaml -n example
 ```
 
-> Note: Deploying self hosted ghost on kubernetes with multiple replicas is not supported yet, we will be deploying it with only 1 replica.
+> Deploying self hosted ghost on kubernetes with multiple replicas is not supported yet, we will be deploying it with only 1 replica.
