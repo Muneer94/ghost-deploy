@@ -1,0 +1,26 @@
+# helm dependency build ./ghost --debug
+# helm upgrade --install ghost ghost --namespace example --create-namespace -f custom/ghost/example.yaml
+replicas: 1
+
+persistentVolumeClaim:
+  enabled: true
+  accessModes: ReadWriteMany
+  storageClassName: longhorn
+  storageSize: 10Gi
+
+mysql:
+  global:
+    storageClass: "longhorn"
+  architecture: replication
+  primary:
+    persistence:
+      enabled: true
+      accessModes:
+        - ReadWriteMany
+      size: 10Gi
+  secondary:
+    persistence:
+      enabled: true
+      accessModes:
+        - ReadWriteMany
+      size: 10Gi
