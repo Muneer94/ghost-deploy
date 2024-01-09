@@ -7,13 +7,15 @@
 
 ## Quickstart Install
 
-These instructions are for ghost installation on bare metal kubernetes cluster using `helm`.
+These instructions are for ghost installation on bare metal Kubernetes cluster using `helm`.
 
-1. Run update dependency command to create bitnami mysql helm chart in ghost helm charts directory
+1. Run the update dependency command to create bitnami MySQL helm chart in ghost helm charts directory
 ```bash
+git clone https://github.com/Muneer94/ghost-deploy.git
+cd ghost-deploy
 helm dependency update ./ghost --debug
 ```
-2. Deploy [local-path-provisioner](https://github.com/rancher/local-path-provisioner) storage class but it does not support `readwritemany` so for high availability of your kubernetes cluster better to use `longhorn`
+2. Deploy [local-path-provisioner](https://github.com/rancher/local-path-provisioner) storage class but it does not support `readwritemany` so for high availability of your Kubernetes cluster better to use `longhorn`
 ```bash
 # mak sure following packages are installed in kubernetes nodes
 sudo apt-get install nfs-common cifs-utils -y
